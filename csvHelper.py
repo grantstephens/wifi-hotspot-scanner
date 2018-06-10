@@ -9,7 +9,7 @@ def write(filename, data, headers=None):
     if os.path.isfile(filename):
         fileExists = True
     else:
-        fileExists = False   
+        fileExists = False
     # open the file for editing
     with open(filename, 'a') as file:
         # if headers are supplied, assume dictionaries are used for row data
@@ -22,9 +22,9 @@ def write(filename, data, headers=None):
         # else treat list elements as cells
         else:
             writer = csv.writer(file)
-        
+
         # write the data to the file
         for row in data:
             writer.writerow(row)
-        
+
     print "Saved to " + filename
